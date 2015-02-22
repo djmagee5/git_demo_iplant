@@ -30,6 +30,6 @@ d2 <- diamonds[sample(1:dim(diamonds)[1], 1000), ]
 # look at the data set this way... decide to plot by carat by price
 # sort the color by color after seeing this
 head(d2)
-d2plot <- ggplot(d2, aes(x=price, y=carat, color=color))
+d2plot <- ggplot(d2, aes(x=carat, y=price, color=color))
 
 d2plot + geom_point()
