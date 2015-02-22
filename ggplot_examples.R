@@ -38,3 +38,7 @@ d2plot + geom_point()
 
 library(MASS)
 ggplot(birthwt, aes(factor(race), bwt)) + geom_boxplot()
+
+# use facets to break up the data with facet_grid
+# y axis is shared among all three
+ggplot(iris, aes(x = Sepal.Length, Sepal.Width, color=Species)) + geom_point() + facet_grid(Species ~ .)
