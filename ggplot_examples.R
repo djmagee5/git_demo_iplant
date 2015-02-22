@@ -13,8 +13,10 @@ library("reshape2")
 library("ggthemes")
 library("plyr")
 
-myplot <- ggplot(data = iris, aes(x=Sepal.Length, y=Sepal.Width))
+myplot <- ggplot(data = iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species))
 summary(myplot)
 
-myplot + geom_point()
+# why shape = Species?
+# because we're mapping, not setting
+myplot + geom_point(aes(shape=Species), size = 3)
 
