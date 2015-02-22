@@ -24,7 +24,10 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 setwd("/Users/dtman5/Desktop/iPlant_workshop/output/")
 data.in <- read.csv("combined_gapMinder.tsv", sep="\t")
 
-afghan <- subset(data.in["Afghanistan",])
-nigeria <- subset(data.in["Nigeria",])
-chile <- subset(data.in["Chile",])
+afghan <- subset(data.in, country=="Afghanistan")
+nigeria <- subset(data.in, country=="Nigeria")
+chile <- subset(data.in, country=="Chile")
 
+subs <- subset(data.in, country ==("Afghanistan") | 
+                        country == ("Chile")      |
+                        country == ("Nigeria")    )
