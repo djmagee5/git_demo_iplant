@@ -21,6 +21,16 @@ plot(cars)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
+install.packages("ggplot2", dependencies = TRUE)
+install.packages("plyr")
+install.packages("ggthemes")
+install.packages("reshape2")
+
+library("ggplot2")
+library("reshape2")
+library("ggthemes")
+library("plyr")
+
 setwd("/Users/dtman5/Desktop/iPlant_workshop/output/")
 data.in <- read.csv("combined_gapMinder.tsv", sep="\t")
 
@@ -31,3 +41,6 @@ chile <- subset(data.in, country=="Chile")
 subs <- subset(data.in, country ==("Afghanistan") | 
                         country == ("Chile")      |
                         country == ("Nigeria")    )
+myplot <- ggplot(data=subs, aes(x=year, y=gdpPercap))
+myplot + geom_point()
+
