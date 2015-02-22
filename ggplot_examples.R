@@ -16,4 +16,5 @@ library("plyr")
 myplot <- ggplot(data = iris, aes(x=Sepal.Length, y=Sepal.Width))
 summary(myplot)
 
-ggplot(data=iris, aes(x=Sepal.Length, y=Sepal.Width)) + geom_point()
+myplot + geom_point()
+
