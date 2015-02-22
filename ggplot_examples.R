@@ -53,3 +53,4 @@ df <- melt(iris, id.vars = "Species")
 ggplot(df, aes(Species, value, fill = variable)) +
   geom_bar(stat="identity", position = "dodge") + 
   scale_fill_brewer(palette = "Set1")
+
