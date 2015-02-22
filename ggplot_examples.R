@@ -33,3 +33,8 @@ head(d2)
 d2plot <- ggplot(d2, aes(x=carat, y=price, color=color))
 
 d2plot + geom_point()
+
+?geom_boxplot
+
+library(MASS)
+ggplot(birthwt, aes(factor(race), bwt)) + geom_boxplot()
