@@ -40,5 +40,16 @@ library(MASS)
 ggplot(birthwt, aes(factor(race), bwt)) + geom_boxplot()
 
 # use facets to break up the data with facet_grid
-# y axis is shared among all three
-ggplot(iris, aes(x = Sepal.Length, Sepal.Width, color=Species)) + geom_point() + facet_grid(Species ~ .)
+# x axis is shared among all three, y axis is repeated
+ggplot(iris, aes(x = Sepal.Length, Sepal.Width, color=Species)) + geom_point() + facet_grid(. ~ Species)
+
+# load the color brewer
+library("reshape2")
+library("RColorBrewer")
+
+# check out these cool color brewer things 
+# melt it so they're all in a column
+df <- melt(iris, id.vars = "Species")
+ggplot(df, aes(Species, value, fill = variable)) +
+  geom_bar(stat="identity", position = "dodge") + 
+  scale_fill_brewer(palette = "Set1")
